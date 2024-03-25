@@ -26,7 +26,7 @@ class AutorService implements AutorServiceInterface {
 
     }
 
-    public function store(Request $request) {
+    public function store($request) {
 
         $this->repository->create($request->all());
     }
@@ -43,7 +43,7 @@ class AutorService implements AutorServiceInterface {
 
     }
 
-    public function update(Request $request, string $id) {
+    public function update($request, string $id) {
 
         // $request->validate([
         //     $registro = $request->all()
@@ -54,6 +54,7 @@ class AutorService implements AutorServiceInterface {
         $autor = $this->repository->find($id);
 
         $autor -> update($registro);
+        
     }
 
     public function delete($id) {}
